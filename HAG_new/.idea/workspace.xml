@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba7b7433-7184-47c9-9f47-9b82baf58f49" name="Default Changelist" comment="" />
+    <list default="true" id="ba7b7433-7184-47c9-9f47-9b82baf58f49" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -222,7 +224,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="545" />
+    <option name="x" value="434" />
+    <option name="y" value="14" />
     <option name="width" value="760" />
     <option name="height" value="718" />
   </component>
@@ -413,6 +416,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554747758478" />
@@ -544,12 +548,12 @@
       <workItem from="1555782137836" duration="5702000" />
       <workItem from="1556094859620" duration="4605000" />
       <workItem from="1557388701757" duration="115000" />
-      <workItem from="1557389323744" duration="4184000" />
+      <workItem from="1557389323744" duration="5497000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116496000" />
+    <option name="totallyTimeSpent" value="117809000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -561,7 +565,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="545" y="0" width="760" height="718" extended-state="0" />
+    <frame x="434" y="14" width="760" height="718" extended-state="0" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="1" />
@@ -580,8 +584,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49857143" visible="true" weight="0.34358975" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50142854" side_tool="true" visible="true" weight="0.34358975" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.71" visible="true" weight="0.63076925" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.29" side_tool="true" visible="true" weight="0.63076925" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4969743" weight="0.32405892" />
       <window_info anchor="bottom" id="Database Console" order="13" sideWeight="0.4977307" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
