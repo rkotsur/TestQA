@@ -31,7 +31,7 @@ public class MainScenario {
        webDriver.get("https://moqod.com");
         String actualTitle = webDriver.getTitle();
         String expectedTitle = "Moqod - Software development and nearshoring";
-        assertEquals(expectedTitle,actualTitle);
+        assertEquals(expectedTitle, actualTitle);
 
     }
 
