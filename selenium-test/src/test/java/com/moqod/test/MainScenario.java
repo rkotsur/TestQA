@@ -1,21 +1,15 @@
 package com.moqod.test;
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
-import java.util.Iterator;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
-
 import static org.testng.Assert.assertEquals;
 
 public class MainScenario {
@@ -29,7 +23,7 @@ public class MainScenario {
 
     @AfterClass
     public void afterClass() {
-       // webDriver.quit();
+      webDriver.quit();
     }
     @Test
     public void test1(){
@@ -73,20 +67,45 @@ public class MainScenario {
         assertEquals(expectedPhone, hiddenPhone);
 
     }
-    @Test
-    public void test5() throws InterruptedException {
-        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        webDriver.get("https://moqod.com/");
-        webDriver.findElement(By.cssSelector("div.slaask-button-cross svg")).click(); //сюда кликаю и откр чат
-        Thread.sleep(1000);
-        String firstRow =webDriver.findElement(By.cssSelector(".slaask-message-body p:nth-child(1)")).getText()+" ";
-        String secondRow =webDriver.findElement(By.cssSelector(".slaask-message-body p:nth-child(2)")).getText();
-        String resultRow=(firstRow.concat(secondRow));
-        String expectedChat ="Привет Есть вопросы? Буду рад помочь!";
-        assertEquals(expectedChat, resultRow);
+
+        @Test
+        public void test5() throws Exception {
+            webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            webDriver.get("https://moqod.com");
+            waitForLoad(webDriver);
+            WebDriverWait webDriverWait = new WebDriverWait(webDriver, 5);
+
+            By buttonSelector = By.cssSelector("#slaask-button");
+            webDriverWait.until(ExpectedConditions.elementToBeClickable(buttonSelector));
+            webDriver.findElement(buttonSelector).click();
+
+            By textSelector = By.cssSelector(".slaask-message-body p:nth-child(1)");
+            webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(textSelector));
+
+            String firstRow = webDriver.findElement(textSelector).getText();
+
+            By textSelector1 = By.cssSelector(".slaask-message-body p:nth-child(2)");
+            webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(textSelector1));
+
+            String secondRow = webDriver.findElement(textSelector1).getText();
+
+            //System.out.println(firstRow);
+          //  System.out.println(secondRow);
+
+            String expectedFirstRow = "Привет";
+            String expectedSecondRow = "Есть вопросы? Буду рад помочь!";
+
+            assertEquals(expectedFirstRow, firstRow);
+            assertEquals(expectedSecondRow, secondRow);
+        }
+
+    void waitForLoad(WebDriver webDriver) {
+        new WebDriverWait(webDriver, 30).until((ExpectedCondition<Boolean>) wd ->
+                ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete"));
 
 
 
     }
+    }
 
-}
+
