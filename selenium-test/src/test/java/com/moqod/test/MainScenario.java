@@ -2,12 +2,18 @@ package com.moqod.test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertEquals;
@@ -68,17 +74,18 @@ public class MainScenario {
 
     }
     @Test
-    public void test5(){
+    public void test5() throws InterruptedException {
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         webDriver.get("https://moqod.com/");
-        webDriver.findElement(By.cssSelector("div.slaask-button-cross svg")).click();
-        String firstRow =webDriver.findElement(By.cssSelector(".slaask-message-body p")).getText();
-        String secondRow =webDriver.findElement(By.cssSelector(".slaask-message-body p:nth-child(1)")).getText();
-        System.out.println(firstRow);
-        System.out.println(secondRow);
-        String resultRow=firstRow.concat(secondRow);
-        String expectedPhone = "+31 6 40 31 94 71";
-        assertEquals(expectedPhone, resultRow);
+        webDriver.findElement(By.cssSelector("div.slaask-button-cross svg")).click(); //сюда кликаю и откр чат
+        Thread.sleep(1000);
+        String firstRow =webDriver.findElement(By.cssSelector(".slaask-message-body p:nth-child(1)")).getText()+" ";
+        String secondRow =webDriver.findElement(By.cssSelector(".slaask-message-body p:nth-child(2)")).getText();
+        String resultRow=(firstRow.concat(secondRow));
+        String expectedChat ="Привет Есть вопросы? Буду рад помочь!";
+        assertEquals(expectedChat, resultRow);
+
+
 
     }
 
